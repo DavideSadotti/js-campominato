@@ -1,22 +1,23 @@
+var level = 0;
 var num = 0;
 
 // Definisco le funzioni per ogni livello
 function levelOne(){
-  var level = 100;
+  level = 100;
   campoMinato();
   // Stampo a video il risultato
   document.getElementById('numConsentitoUno').innerHTML += "Hai inserito " + num + " volta/e i numeri consentiti!"
 }
 
 function levelTwo(){
-  var level = 80;
+  level = 80;
   campoMinato();
   // Stampo a video il risultato
   document.getElementById('numConsentitoDue').innerHTML += "Hai inserito " + num + " volta/e i numeri consentiti!"
 }
 
 function levelThree(){
-  var level = 50;
+  level = 50;
   campoMinato();
   // Stampo a video il risultato
   document.getElementById('numConsentitoTre').innerHTML += "Hai inserito " + num + " volta/e i numeri consentiti!"
@@ -43,15 +44,14 @@ function campoMinato(){
     var number = parseInt(prompt("Inserisci un numero univoco da 1 a " + level + " per 16 volte. Fino ad ora hai inserito: " + numUser.length + " numeri!"));
     if(number >= 1 && number <= level){
       // Controllo se quel numero è già stato inserito
-      if(numUser.indexOf(number) == -1){
-        numUser.push(number);
-      }
       // Controllo se quel numero è un numero vietato
-      if(numPc.includes(number)){
+      if(numUser.indexOf(number) == -1 && !numPc.includes(number)){
+        numUser.push(number);
+      }else if(numPc.includes(number)){
         lost = true;
         alert("Hai perso sfigato!")
       }
     }
   }
-  num =  numUser.length - 1;
+  num =  numUser.length;
 }
