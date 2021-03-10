@@ -1,23 +1,22 @@
-var level = 0;
 var num = 0;
 
 // Definisco le funzioni per ogni livello
 function levelOne(){
-  level = 100;
+  var level = 100;
   campoMinato();
   // Stampo a video il risultato
   document.getElementById('numConsentitoUno').innerHTML += "Hai inserito " + num + " volta/e i numeri consentiti!"
 }
 
 function levelTwo(){
-  level = 80;
+  var level = 80;
   campoMinato();
   // Stampo a video il risultato
   document.getElementById('numConsentitoDue').innerHTML += "Hai inserito " + num + " volta/e i numeri consentiti!"
 }
 
 function levelThree(){
-  level = 50;
+  var level = 50;
   campoMinato();
   // Stampo a video il risultato
   document.getElementById('numConsentitoTre').innerHTML += "Hai inserito " + num + " volta/e i numeri consentiti!"
